@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "HYCYQMM28B.fr.worldmediaa.sudokufamily",
+        "paths": ["/jouer/*"]
+      }
+    ]
+  }
+}

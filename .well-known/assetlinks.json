@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "fr.worldmediaa.sudokufamily",
+      "sha256_cert_fingerprints": [
+        "56:1B:01:9F:B8:61:EF:5E:3C:EE:88:33:3F:9D:05:5C:73:AD:CD:7B:73:CE:96:FD:4A:74:AF:63:D1:95:6C:B6"
+      ]
+    }
+  }
+]

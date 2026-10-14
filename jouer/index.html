@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#064b45">
+  <title>Jouer à Sudoku Family — WORLDMEDIA</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, sans-serif; }
+    * { box-sizing: border-box; }
+    body { min-height: 100svh; margin: 0; display: grid; place-items: center; padding: 24px; color: #f8fff9; background: radial-gradient(circle at 80% 15%, #218f77 0, transparent 42%), linear-gradient(150deg, #062d38, #075745 65%, #0c7858); }
+    main { width: min(100%, 480px); text-align: center; padding: 44px 26px 30px; border: 1px solid #b9e9d2a8; border-radius: 32px; background: #073e3ad9; box-shadow: 0 24px 72px #001e2699; }
+    .mark { display: inline-grid; place-items: center; width: 70px; height: 70px; border: 2px solid #ffe5a9; border-radius: 21px; color: #ffe5a9; font-size: 42px; font-weight: 800; }
+    h1 { margin: 26px 0 10px; font-size: clamp(30px, 7vw, 42px); line-height: 1.1; }
+    p { line-height: 1.5; color: #def9e9; }
+    .actions { display: grid; gap: 12px; margin-top: 30px; }
+    .button { display: block; padding: 16px 20px; border-radius: 16px; background: #ffda8e; color: #123d37; font-size: 17px; font-weight: 800; text-decoration: none; }
+    .button.secondary { background: #e9fff0; }
+    footer { margin-top: 32px; font-size: 13px; color: #c4e9d7; }
+    footer a { color: inherit; }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="mark" aria-hidden="true">9</span>
+    <h1>Sudoku Family</h1>
+    <p id="message">Le jeu s’ouvre si vous l’avez déjà installé. Sinon, choisissez votre boutique.</p>
+    <div class="actions">
+      <a class="button" id="apple" href="https://apps.apple.com/app/id6821484960">App Store · iPhone et iPad</a>
+      <a class="button secondary" id="google" href="https://play.google.com/store/apps/details?id=fr.worldmediaa.sudokufamily">Google Play · Android</a>
+    </div>
+    <footer>WORLDMEDIA · <a href="https://williamguirand.github.io/Sudoku-Family-support/confidentialite.html">Confidentialité / Privacy</a></footer>
+  </main>
+  <script>
+    (() => {
+      const language = (navigator.language || 'fr').toLowerCase();
+      if (!language.startsWith('fr')) {
+        document.documentElement.lang = 'en';
+        document.getElementById('message').textContent = 'If you have the game, it opens directly. Otherwise, choose your store.';
+      }
+      const agent = navigator.userAgent || '';
+      const target = /iPhone|iPad|iPod/i.test(agent) ? document.getElementById('apple').href
+        : /Android/i.test(agent) ? document.getElementById('google').href : '';
+      if (target) window.location.replace(target);
+    })();
+  </script>
+</body>
+</html>
